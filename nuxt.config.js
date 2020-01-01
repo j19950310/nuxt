@@ -1,16 +1,18 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/nuxt/',
-    linkPrefetchedClass: 'nuxt-link-prefetched',
-  }
-} : {
-  router: {
-    linkPrefetchedClass: 'nuxt-link-prefetched',
-  }
-}
+// const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+//   router: {
+//     base: '/nuxt/',
+//     linkPrefetchedClass: 'nuxt-link-prefetched',
+//   }
+// } : {
+//   router: {
+//     linkPrefetchedClass: 'nuxt-link-prefetched',
+//   }
+// }
 
 export default {
-  mode: 'universal',
+  // mode: 'universal',
+  mode: 'spa',
+
   generate: {
     dir: 'docs'
   },
@@ -64,5 +66,9 @@ export default {
     extend (config, ctx) {
     }
   },
-  routerBase,
+  // routerBase,
+  router: {
+    base: '/nuxt/',
+    linkPrefetchedClass: 'nuxt-link-prefetched',
+  }
 }

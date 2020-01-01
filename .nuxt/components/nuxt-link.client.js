@@ -35,6 +35,10 @@ export default {
     noPrefetch: {
       type: Boolean,
       default: false
+    },
+    prefetchedClass: {
+      type: String,
+      default: 'nuxt-link-prefetched'
     }
   },
   mounted () {
@@ -61,6 +65,8 @@ export default {
         this.$el.__prefetch = this.prefetchLink.bind(this)
         observer.observe(this.$el)
         this.__observed = true
+      } else {
+        this.addPrefetchedClass()
       }
     },
     shouldPrefetch () {
@@ -92,6 +98,12 @@ export default {
           componentOrPromise.catch(() => {})
         }
         Component.__prefetched = true
+      }
+      this.addPrefetchedClass()
+    },
+    addPrefetchedClass () {
+      if (this.prefetchedClass !== 'false') {
+        this.$el.className = (this.$el.className + ' ' + this.prefetchedClass).trim()
       }
     }
   }
