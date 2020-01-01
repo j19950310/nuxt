@@ -1,8 +1,8 @@
 <template>
   <div class="container">
       <div class="index__nav">
-        <nuxt-link to="about" target="_blank" class="index__nav-link"><span class="a index__nav-link-t">關於我</span></nuxt-link>
-        <nuxt-link to="contact"  target="_blank" class="index__nav-link"><span class="a index__nav-link-t">連絡我</span></nuxt-link>
+        <nuxt-link to="{{router.base}}/about" target="_blank" class="index__nav-link"><span class="a index__nav-link-t">關於我</span></nuxt-link>
+        <nuxt-link to="{{router.base}}/contact"  target="_blank" class="index__nav-link"><span class="a index__nav-link-t">連絡我</span></nuxt-link>
       </div>
   </div>
 </template>
@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       // gh repository name
-      // gh_rep: 'nuxt'
-      gh_rep: ''
+      gh_rep: 'nuxt'
+      // gh_rep: ''
 
     }
   },
