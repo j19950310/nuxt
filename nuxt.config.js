@@ -11,6 +11,9 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 export default {
   mode: 'universal',
+  generate: {
+    dir: 'docs'
+  },
   /*
   ** Headers of the page
   */
