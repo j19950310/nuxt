@@ -1,60 +1,54 @@
 <template>
-  <div class="container">
-      <div class="index__nav">
-        <nuxt-link to="/about" target="_blank" class="index__nav-link"><span class="a index__nav-link-t">關於我</span></nuxt-link>
-        <nuxt-link to="/contact"  target="_blank" class="index__nav-link"><span class="a index__nav-link-t">連絡我</span></nuxt-link>
-      </div>
-  </div>
+    <base-layout>
+        <div @click="translate('.in', 'x')" class="out">
+            <div class="in"></div>
+        </div>
+        首頁
+    </base-layout>
 </template>
-
 <script>
-
+import baseLayout from '@/components/organisms/base'
+import gsap from 'gsap'
 export default {
-  components: {
-  },
-  head:{
-    title: 'Jay 測試中'
-  },
-  data() {
-    return {
-      // gh repository name
-      gh_rep: 'nuxt'
-      // gh_rep: ''
-
+    head: {
+        title: 'Jay |  nuxt測試'
+    },
+    components: {
+        baseLayout
+    },
+    methods: {
+        translate(obj, direct) {
+            let x = direct === 'x' ? '+=50' : 0
+            let y = direct === 'y' ? '+=50' : 0
+            console.log(`x:${x} ,y:${y}`)
+            gsap.to('.in', { y: y, x: x, duration: 1 })
+        },
+        test() {}
+    },
+    mounted() {
+        var out = document.querySelector('.out')
+        var inside = document.querySelector('.in')
+        var io = new IntersectionObserver(
+            entries => {
+                console.log(entries)
+            },
+            {
+                root: out
+            }
+        )
+        io.observe(inside)
     }
-  },
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang="scss" scoped>
+.out {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    .in {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+    }
 }
 </style>

@@ -1,18 +1,26 @@
 <template>
     <base-layout>
-        <h1>我的手機 09-XXXX-XXXX</h1>
-        <h1>email:j19950310@gmail.com</h1>
+        <nuxt-child :root="root" />
     </base-layout>
 </template>
 <script>
 import baseLayout from '@/components/organisms/base'
-
 export default {
     head: {
-        title: '請聯繫我'
+        title: '關於我的部分'
+    },
+    data() {
+        return {
+            root: '/posts/'
+        }
     },
     components: { baseLayout }
 }
 </script>
 <style lang="scss" scoped>
+.post-page {
+    &__title {
+        font-size: 30px;
+    }
+}
 </style>

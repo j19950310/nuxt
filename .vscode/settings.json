@@ -1,3 +1,31 @@
+// {
+//   "git.ignoreLimitWarning": true,
+//   "typescript.quickSuggestionsForPaths": false,
+//   "path-intellisense.mappings": {
+//     "@": "${workspaceRoot}"
+//   },
+//   "emmet.triggerExpansionOnTab": true,
+//   "emmet.includeLanguages": {
+//     "vue-html": "html",
+//     "vue": "html"
+//   },
+//   "editor.formatOnSave": true,
+//   "prettier.singleQuote": true,
+//   "prettier.semi": false,
+//   "prettier.printWidth": 120,
+//   "prettier.trailingComma": "es5",
+//   "prettier.tabWidth": 4
+// }
 {
-    "git.ignoreLimitWarning": true
+    "editor.formatOnSave": true,
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "prettier.printWidth": 120,
+    "prettier.trailingComma": "es5",
+    "prettier.tabWidth": 4,
+    "prettier.useEditorConfig": false,
+    "prettier.useTabs": true,
+    "prettier.vueIndentScriptAndStyle": true,
+    "prettier.resolveGlobalModules": true,
+    "prettier.packageManager": "yarn"
 }

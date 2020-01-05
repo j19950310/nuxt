@@ -12,7 +12,6 @@
 export default {
   // mode: 'universal',
   mode: 'spa',
-
   generate: {
     dir: 'docs'
   },
